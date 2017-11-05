@@ -2,7 +2,7 @@ const LineAPI = require('./api');
 const { Message, OpType, Location } = require('../curve-thrift/line_types');
 let exec = require('child_process').exec;
 
-var myStaff = ['uf7c3c593220a325c1c1fa27efeb13a9d','uf25c0403a3d183da6596ab2d3625ab06'];
+var myStaff = ['uacf8824fa827c271a48a2fa4c337266c'];
 
 const myAdmin = ['ub4974c6489c969402713a974b568ee9e','ue6ab7d65e34868a3e2cc2d655eedf25b','ub541f0703be3a3c29a6c05cf3c85f073','u21223b2de309c505df44ad1e2d3fe4f2'];
 
