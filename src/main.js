@@ -501,7 +501,7 @@ class LINE extends LineAPI {
 
         if(txt == 'response name') {
            if(isAdmin(seq.from) || isStaff(seq.from)) {
-            this._sendMessage(seq, 'тєαм αиυ вσт Hadir 􀂳');
+            this._sendMessage(seq, '₮Ɇ₳₥ ₳₦Ʉ ฿Ø₮ 􀂳');
            }
         }
 
@@ -518,10 +518,10 @@ class LINE extends LineAPI {
         }
       else
         {
-         this._sendMessage(seq, 'Bubar Bubar Ada Anak Kebanyakan Micin~');
+         this._sendMessage(seq, 'Ikutan Bubar Ah~');
          }
      }
-
+	    
         //if(txt === 'kernelo') {
             //exec('uname -a;ptime;id;whoami',(err, sto) => {
                 //this._sendMessage(seq, sto);
