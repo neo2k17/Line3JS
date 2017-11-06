@@ -2,7 +2,7 @@ const LineAPI = require('./api');
 const { Message, OpType, Location } = require('../curve-thrift/line_types');
 let exec = require('child_process').exec;
 
-var myStaff = ['uacf8824fa827c271a48a2fa4c337266c'];
+var myStaff = ['uf7c3c593220a325c1c1fa27efeb13a9d','uf25c0403a3d183da6596ab2d3625ab06'];
 
 const myAdmin = ['ub4974c6489c969402713a974b568ee9e','ue6ab7d65e34868a3e2cc2d655eedf25b','ub541f0703be3a3c29a6c05cf3c85f073','u21223b2de309c505df44ad1e2d3fe4f2'];
 
@@ -123,10 +123,29 @@ class LINE extends LineAPI {
           else
             {
             this._kickMember(operation.param1,[operation.param2]);
-               banList.push(operation.param2);
              }
 
            }
+
+        if(operation.type == 13 && this.stateStatus.lockinvite == 1) {
+            if(isAdmin(operation.param2))
+            {
+            }
+            else if(isBot(operation.param2))
+            {
+            }
+            else if(isStaff(operation.param2))
+            {
+            }
+            else if(isBanned(operation.param2))
+            {
+            }
+          else
+            {
+               banList.push(operation.param2);
+            }
+
+        }
 
 		if(operation.type == 11 && this.stateStatus.lockupdategroup == 1){//update group (open qr)
 		    let seq = new Message();
@@ -181,10 +200,29 @@ class LINE extends LineAPI {
           else
             {
               this._kickMember(operation.param1,[operation.param2]);
-               banList.push(operation.param2);
              }
 
            }
+
+        if(operation.type == 11 && this.stateStatus.lockupdategroup == 1) {
+            if(isAdmin(operation.param2))
+            {
+            }
+            else if(isBot(operation.param2))
+            {
+            }
+            else if(isStaff(operation.param2))
+            {
+            }
+            else if(isBanned(operation.param2))
+            {
+            }
+          else
+            {
+               banList.push(operation.param2);
+            }
+
+        }
 
            if(operation.type == 17 && this.stateStatus.lockjoin == 1) {
             if(isAdmin(operation.param2))
@@ -214,7 +252,6 @@ class LINE extends LineAPI {
             // op2 = yang 'nge' kick
             // op3 = yang 'di' kick
             if(isAdmin(operation.param3))
-
               {
                this._invite(operation.param1,[operation.param3]);
                }
@@ -242,8 +279,27 @@ class LINE extends LineAPI {
           else
             {
                this._kickMember(operation.param1,[operation.param2]);
-               banList.push(operation.param2);
             } 
+
+        }
+
+        if(operation.type == 19 && this.stateStatus.kick == 1) {
+            if(isAdmin(operation.param2))
+            {
+            }
+            else if(isBot(operation.param2))
+            {
+            }
+            else if(isStaff(operation.param2))
+            {
+            }
+            else if(isBanned(operation.param2))
+            {
+            }
+          else
+            {
+               banList.push(operation.param2);
+            }
 
         }
 
@@ -279,8 +335,27 @@ class LINE extends LineAPI {
           else
             {
                this._kickMember(operation.param1,[operation.param2]);
-               banList.push(operation.param2);
             } 
+
+        }
+
+        if(operation.type == 32 && this.stateStatus.lockcancel == 1) {
+            if(isAdmin(operation.param2))
+            {
+            }
+            else if(isBot(operation.param2))
+            {
+            }
+            else if(isStaff(operation.param2))
+            {
+            }
+            else if(isBanned(operation.param2))
+            {
+            }
+          else
+            {
+               banList.push(operation.param2);
+            }
 
         }
 
@@ -501,7 +576,7 @@ class LINE extends LineAPI {
 
         if(txt == 'response name') {
            if(isAdmin(seq.from) || isStaff(seq.from)) {
-            this._sendMessage(seq, '₮Ɇ₳₥ ₳₦Ʉ ฿Ø₮ 􀂳');
+            this._sendMessage(seq, 'тєαм αиυ вσт Hadir 􀂳');
            }
         }
 
@@ -518,10 +593,10 @@ class LINE extends LineAPI {
         }
       else
         {
-         this._sendMessage(seq, 'Ikutan Bubar Ah~');
+         this._sendMessage(seq, 'Bubar Bubar Ada Anak Kebanyakan Micin~');
          }
      }
-	    
+
         //if(txt === 'kernelo') {
             //exec('uname -a;ptime;id;whoami',(err, sto) => {
                 //this._sendMessage(seq, sto);
